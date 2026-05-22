@@ -82,13 +82,13 @@ HRESULT captureThreadsafe::VideoInputFormatChanged(
   return E_FAIL;
 }
 
-void finalizeCaptureCarrier(napi_env env, void* finalize_data, void* finalize_hint) {
+void finalizeCaptureCarrier(node_api_basic_env env, void* finalize_data, void* finalize_hint) {
   // printf("Finalizing capture threadsafe.\n");
   captureThreadsafe* c = (captureThreadsafe*) finalize_data;
   delete c;
 }
 
-void finalizeVideoBuffer(napi_env env, void* finalize_data, void* finalize_hint) {
+void finalizeVideoBuffer(node_api_basic_env env, void* finalize_data, void* finalize_hint) {
   napi_status status;
   int64_t externalMemory;
   IDeckLinkVideoInputFrame* video = (IDeckLinkVideoInputFrame*) finalize_hint;
@@ -99,7 +99,7 @@ void finalizeVideoBuffer(napi_env env, void* finalize_data, void* finalize_hint)
   // printf("Releasing video frame - ext mem now %li\n", externalMemory);
 }
 
-void finalizeAudioPacket(napi_env env, void* finalize_data, void* finalize_hint) {
+void finalizeAudioPacket(node_api_basic_env env, void* finalize_data, void* finalize_hint) {
   napi_status status;
   int64_t externalMemory = 0;
   audioData* audio = (audioData*) finalize_hint;

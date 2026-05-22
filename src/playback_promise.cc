@@ -82,7 +82,7 @@ HRESULT playbackThreadsafe::ScheduledPlaybackHasStopped() {
   return S_OK;
 }
 
-void finalizePlaybackCarrier(napi_env env, void* finalize_data, void* finalize_hint) {
+void finalizePlaybackCarrier(node_api_basic_env env, void* finalize_data, void* finalize_hint) {
   // printf("Finalizing playback threadsafe.\n");
   playbackThreadsafe* c = (playbackThreadsafe*) finalize_data;
   delete c;
