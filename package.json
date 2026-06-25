@@ -31,8 +31,7 @@
   "homepage": "https://github.com/Streampunk/macadam#readme",
   "dependencies": {
     "bindings": "^1.5.0",
-    "highland": "^2.13.5",
-    "segfault-handler": "^1.3.0"
+    "highland": "^2.13.5"
   },
   "gypfile": true,
   "devDependencies": {

@@ -50,9 +50,6 @@ const macadamNative = require('bindings')('macadam');
 const util = require('util');
 const EventEmitter = require('events');
 
-var SegfaultHandler = require('segfault-handler');
-SegfaultHandler.registerHandler('crash.log');
-
 // Capture class is deprecated
 function Capture (deviceIndex, displayMode, pixelFormat) {
   this.deviceIndex = deviceIndex;
