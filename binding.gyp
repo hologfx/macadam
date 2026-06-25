@@ -5,7 +5,8 @@
       ['OS=="mac"', {
         'sources' : [ "src/macadam_util.cc", "src/macadam.cc",
           "src/capture_promise.cc", "src/playback_promise.cc",
-          "src/timecode.cc" ],
+          "src/timecode.cc",
+          "decklink/Mac/include/DeckLinkAPIDispatch.cpp" ],
         'xcode_settings': {
           'GCC_ENABLE_CPP_RTTI': 'YES',
           'MACOSX_DEPLOYMENT_TARGET': '10.7',
@@ -16,8 +17,7 @@
         },
         "link_settings": {
           "libraries": [
-            '-F/Library/Frameworks',
-            '-framework', 'DeckLinkAPI'
+            '-framework', 'CoreFoundation'
           ]
         },
         "include_dirs" : [
